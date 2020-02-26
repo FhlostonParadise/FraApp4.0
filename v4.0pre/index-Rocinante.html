@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title>Spaceballs, The StartPage!</title>
+  <link defer rel="stylesheet" href="vendors/font-awesone.min.css">
+  <link defer rel="stylesheet" href="vendors/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="vendors/flipclock.css">
+  <link rel="stylesheet" href="app.css">
+  <!-- <script src="http://localhost:8098"></script> -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body class>
+  <div id="app" class="is-dark bgImage">
+  <!-- <div id="app" v-if="config" :class="[isDark ? 'is-dark' : 'is-light']"> -->
+    <!-- <div id="bighead">
+      <section class="first-line">
+        <div v-cloak class="container">
+          <div class="logo">
+            <img v-if="config.logo" :src="config.logo" />
+            <i v-if="config.icon" :class="config.icon"></i>
+          </div>
+          <div class="dashboard-title">
+            <span class="headline">{{ config.subtitle }}</span>
+            <h1>{{ config.title }}</h1>
+          </div>
+        </div>
+      </section>
+      <div v-cloak v-if="config.links" class="container-fluid">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="container">
+            <div class="navbar-menu">
+              <div class="navbar-start">
+                <a v-for="link in config.links" class="navbar-item" :href="link.url" :target="link.target">
+                  <i v-if="link.icon" style="margin-right: 6px;" :class="link.icon"></i>
+                  {{ link.name }}
+                </a>
+              </div>
+              <div class="end">
+                  <a
+                    v-on:click="toggleTheme()"
+                    aria-label="Toggle dark mode"
+                    ><i class="fas fa-adjust"></i>
+                </a>
+                <a v-on:click="toggleLayout()" class="icon-button navbar-item"><i
+                    :class="['fas', vlayout ? 'fa-list' : 'fa-columns']"></i></a>
+                <div class="search-bar">
+                  <label for="search" class="search-label"></label>
+                  <input type="text" id="search" v-model="filter" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div> -->
+    <section class="section sectionTop">
+      <div class="container is-fluid has-text-centered">
+          <div class="containerTime">
+              <div class="clock"></div>
+          </div>
+        </div>
+      <div class= "container containerWeather">
+          <div class="level forecast">
+              <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading has-text-white">Current Temperature</p>
+                    <span class="is-size-3 temperature-degree has-text-white">32</span><span class="is-size-3 has-text-white">&nbsp;F°</span>
+                  </div>
+                </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <canvas id="skycon" class="skycon" width="64" height="64"></canvas>
+                  </div>
+                </div>
+              <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading has-text-white">Currently</p>
+                    <p class="is-size-3 temperature-description has-text-white">F'ing Cold</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    <section id="main-section" class="section">
+      <div v-cloak class="container">
+        <div v-if="offline" class="offline-message">
+          <i class="far fa-dizzy"></i>
+          <h1>You're offline bro. <i class="fas fa-redo-alt" v-on:click="checkOffline()"></i></h1>
+        </div>
+        <div v-else>
+          <!-- Optional messages -->
+          <article v-if="config && config.message" class="message" :class="config.message.style">
+            <div v-if="config.message.title" class="message-header">
+              <p>{{ config.message.title }}</p>
+            </div>
+            <div v-if="config.message.content" class="message-body">
+              {{ config.message.content }}
+            </div>
+          </article>
+
+          <h2 v-if="filter"><i class="fas fa-search"></i> Search</h2>
+
+          <!-- Horizontal layout -->
+          <div v-if="!vlayout || filter" class="columns is-multiline">
+            <template v-for="(group, index) in config.services">
+              <h2 v-if="!filter && group.name" class="column is-full"><i v-if="group.icon" :class="group.icon"></i><span
+                  v-else>#</span>
+                {{ group.name }}</h2>
+              <service v-for="item in group.items" v-bind:item="item" class="column is-one-fifth-widescreen"
+                v-if="!filter || (item && (item.name.toLowerCase().includes(filter.toLowerCase()) || (item.tag && item.tag.toLowerCase().includes(filter.toLowerCase()))))">
+              </service>
+            </template>
+          </div>
+
+          <!-- Vertical layout -->
+          <div v-if="!filter && vlayout" class="columns is-multiline layout-vertical">
+            <div class="column is-one-fifth-widescreen" v-for="(group, index) in config.services">
+              <h2 v-if="!filter && group.name"><i v-if="group.icon" :class="group.icon"></i><span v-else>#</span>
+                {{ group.name }}</h2>
+              <service v-for="item in group.items" v-bind:item="item"
+                v-if="!filter || (item && (item.name.toLowerCase().includes(filter.toLowerCase()) || (item.tag && item.tag.toLowerCase().includes(filter.toLowerCase()))))">
+              </service>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section>
+      <div class="container">
+        <h1>RSS Reader (JavaScript)</h1>
+          <output>Loading...</output>
+          <template>
+            <h2></h2>
+            <h3></h3>
+            <a></a>
+            <p></p>
+          </template>
+              </div>
+            </section> -->
+    <!-- <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a
+                href="https://vuejs.org/">vuejs</a>
+              & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i
+                  class="fab fa-github-alt"></i></a></p>
+          </div>
+        </div>
+      </footer> -->
+  </div>
+
+  <script src="vendors/vue.min.js"></script>
+  <script src="vendors/js-yaml.min.js"></script>
+  <script src="app.js"></script>
+  <!-- <script src="js/main.js"></script> -->
+  <script src="js/weather.js"></script>
+  <script src="js/skycons.js"></script>
+  <script src="vendors/jquery.min.js"></script>
+  <script src="vendors/flipclock.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="vendors/moment.js"></script>
+  <script src="rss/xmlToJSON.min.js"></script>
+  <script src="rss/rss.js"></script>
+  
+</body>
+
+</html>

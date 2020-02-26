@@ -1,0 +1,34 @@
+{
+    "background": {
+        "persistent": false,
+        "scripts": [ "worker.js" ]
+    },
+    "browser_action": {
+        "default_icon": "icons/icon32.png",
+        "default_title": "FraApp"
+    },
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "description": "Override the new tab page with the bookmarks.",
+    "icons": {
+        "128": "icons/icon128.png",
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png"
+    },
+    "manifest_version": 2,
+    "name": "FraApp",
+    "permissions": [ 
+        "tabs", 
+        "bookmarks", 
+        "storage", 
+        "topSites", 
+        "chrome://favicon/", 
+        "geolocation",
+        "https://www.commafeed.com/*",
+        "https://*.commafeed.com/*"],
+    "version": "4.0",
+    "web_accessible_resources": [ "src/icons/*.png" ]
+    }

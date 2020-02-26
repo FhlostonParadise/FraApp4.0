@@ -1,0 +1,128 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/icons for icons options
+
+title: "FraApp4.0"
+subtitle: ""
+# logo: "assets/logo.png"
+icon: "fas fa-skull-crossbones"
+
+# Optional message
+# 
+message:
+  # url: https://....
+  #style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+  #title: "Demo !" 
+  #content: "This is a dummy. Find more information on github.com/bastienwirtz/homer"
+
+# Optional navbar
+links:
+  - name: "ansible"
+    icon: "fab fa-github"
+    url: "https://github.com/xxxxx/ansible/"
+    target: '_blank'
+  - name: "Wiki"
+    icon: "fas fa-book"
+    url: "https://wiki.xxxxxx.com/"
+
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Main"
+    icon: "fas fa-code-branch"
+    items:
+      - name: "Twitter"
+        icon: "fab fa-twitter"
+        subtitle: ""
+        tag: "CI"
+        url: "https://twitter.com/"
+        target: '_blank'
+      - name: "Reddit"
+        icon: "fab fa-reddit"
+        subtitle: ""
+        url: "https://reddit.com/"
+        target: '_blank'
+      - name: "HQ"
+        logo: "assets/tools/hassio.png"
+        subtitle: ""
+        url: "https://hq.the-franklins.us:8123/"
+        target: '_blank'
+      - name: "Linkedin"
+        icon: "fab fa-linkedin"
+        subtitle: ""
+        url: "https://linkedin.com/"
+        target: '_blank'
+      - name: "Youtube"
+        logo: "assets/tools/youtube.png"
+        subtitle: ""
+        tag: "CI"
+        url: "https://youtube.com/"
+        target: '_blank'
+      - name: "Facebook"
+        icon: "fab fa-facebook"
+        subtitle: ""
+        tag: "social"
+        # Optional tagstyle
+        # Same styling options as the optional message.
+        tagstyle: "is-success"
+        url: "https://facebook.com"
+        target: '_blank'
+      - name: "Amazon"
+        icon: "fab fa-amazon"
+        subtitle: ""
+        tag: "CI"
+        url: "https://amazon.com/"
+        target: '_blank'
+      - name: "TD"
+        icon: "fas fa-poo-storm"
+        subtitle: ""
+        tag: ""
+        url: "https://www.torrentday.com/"
+        target: '_blank'
+      - name: "CommaFeed"
+        icon: "fas fa-rss"
+        subtitle: ""
+        url: "https://commafeed.com"
+        target: '_blank'
+  - name: "Dev"
+    icon: "fas fa-heartbeat"
+    items:
+      - name: "Github"
+        logo: "assets/tools/octocat.png"
+        subtitle: ""
+        tag: "CI"
+        url: "https://github.com/"
+        target: '_blank'
+      - name: "Bulma CSS"
+        icon: "fab fa-css3"
+        subtitle: ""
+        tag: "css"
+        url: "https://bulma.io/documentation/"
+      - name: "Font Awesome"
+        icon: "fab fa-font-awesome"
+        subtitle: ""
+        url: "https://fontawesome.com/cheatsheet"
+      - name: "CodePen"
+        logo: "assets/tools/codepen.png"
+        subtitle: ""
+        tag: "dev"
+        url: "https://codepen.io"
+      - name: "Website monitoring"
+        logo: "assets/tools/pingdom.png"
+        subtitle: ""
+        tag: "CI"
+        url: "https://www.pingdom.com/"
+      - name: "CSS-Tricks"
+        logo: "assets/tools/css-tricks.png"
+        subtitle: ""
+        tag: "CI"
+        url: "https://css-tricks.com/"
+        target: '_blank'
+      - name: "Unsplash"
+        icon: "fas fa-images"
+        subtitle: ""
+        tag: "CI"
+        url: "https://css-tricks.com/"
+        target: '_blank'
+        

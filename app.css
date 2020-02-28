@@ -490,16 +490,16 @@ body .offline-message i.fa-redo-alt {
 
 /* For Date Widget/Block */
 
-.date-as-calendar {
+/* .date-as-calendar {
   font-variant: normal;
   font-style: normal;
   font-weight: normal;
   font-family: "Montserrat", sans-serif;
 
-  /* It seems vertical-align: baseline does not work correctly with display: inline-flex. */
+  
   vertical-align: top;
 
-  /* margin: 1ex; */
+  
 
   color: #d6d6d6;
   background-color: rgba(0, 0, 0, .1);
@@ -571,3 +571,36 @@ body .offline-message i.fa-redo-alt {
   bottom: 0px;
   font-size: 0.55em;
 }
+ */
+
+
+
+
+/* 2-26 */
+
+.clock-card {
+  background-image: url(/img/clockback.png);
+  background-size: cover;
+  }
+
+.card-weather {
+  background-image: url(/img/weatherback.png);
+  background-size: cover;
+}
+
+.heading-cards {
+  padding-top: 1em;
+}
+
+
+/* 2-28 */
+
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: .5rem;
+}
+
+

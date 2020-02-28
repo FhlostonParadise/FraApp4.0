@@ -97,7 +97,7 @@ Vue.component('service', {
                     </div>
                     <div v-if="item.icon" class="media-left">
                         <figure class="image is-32x32">
-                            <i style="font-size: 30px" :class="item.icon"></i>
+                            <i style="font-size: 26px" :class="item.icon"></i>
                         </figure>
                     </div>
                     <div class="media-content">

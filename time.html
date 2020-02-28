@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+        <link rel="icon" type="image/png" href="assets/favicon.png">
+        <title>Spaceballs, The StartPage!</title>
+        <link defer rel="stylesheet" href="vendors/font-awesone.min.css">
+        <link defer rel="stylesheet" href="vendors/bulma.min.css">
+        <link rel="stylesheet" href="app.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    </head>
+<body style="background: url(/img/bg3.jpg)">
+    <div class="container heading-cards">
+    <div class="columns">
+        <div class="column is-one-third">
+            <div class="card clock-card">
+            <div class="card-content has-text-centered">
+                <div id="date" class="title has-text-white">Search</div>
+                </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item subtitle has-text-white"><icon class="fa fa-search"></icon>
+            </div>
+        </div>
+        <div class="column is-one-third">
+            <div class="card clock-card">
+                <div class="card-content has-text-centered">
+                    <div id="time" class="title has-text-white">12:00</div>
+                    </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item date subtitle has-text-white">Feb 2, 2020</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="card card-weather">
+                <div class="card-content has-text-centered">
+                    <div id="date" class="title has-text-white"><icon class="fas fa-cloud"></icon><span> Cold</span></div>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                          <span>
+                            <icon class="fa fa-cloud has-text-white"></icon>
+                          </span>
+                        </p>
+                        <p class="card-footer-item">
+                          <span>
+                            <icon class="fa fa-sun has-text-white"></icon>
+                          </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+                                <icon class="fa fa-sun has-text-white"></icon>
+                            </span>
+                          </p>
+                          <p class="card-footer-item">
+                            <span>
+                                <icon class="fa fa-cloud has-text-white"></icon>
+                            </span>
+                          </p>
+                          <p class="card-footer-item">
+                            <span>
+                                <icon class="fa fa-cloud has-text-white"></icon>
+                            </span>
+                          </p>
+                      </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vendors/vue.min.js"></script>
+    <script src="js/time.js"></script>
+    <script src="vendors/jquery.min.js"></script>
+</body>
+</html>

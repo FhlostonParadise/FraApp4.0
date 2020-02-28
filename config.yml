@@ -108,11 +108,6 @@ services:
         subtitle: ""
         tag: "dev"
         url: "https://codepen.io"
-      - name: "Website monitoring"
-        logo: "assets/tools/pingdom.png"
-        subtitle: ""
-        tag: "CI"
-        url: "https://www.pingdom.com/"
       - name: "CSS-Tricks"
         logo: "assets/tools/css-tricks.png"
         subtitle: ""
@@ -123,6 +118,6 @@ services:
         icon: "fas fa-images"
         subtitle: ""
         tag: "CI"
-        url: "https://css-tricks.com/"
+        url: "https://unsplash.com/"
         target: '_blank'
         

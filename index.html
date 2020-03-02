@@ -13,62 +13,76 @@
   <link rel="stylesheet" href="app.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <div id="app" class="is-dark bgImage">
-    <div class="container containerWeather">
-      <div class="level forecast">
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading has-text-white">Current Temperature</p>
-            <span class="is-size-3 temperature-degree has-text-white">32</span><span
-              class="is-size-3 has-text-white">&nbsp;F°</span>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <canvas id="skycon" class="skycon" width="64" height="64"></canvas>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading has-text-white">Currently</p>
-            <p class="is-size-3 temperature-description has-text-white">F'ing Cold</p>
-          </div>
-        </div>
+    <div class="searchform">
+      <form action="http://google.com/search" method="get">
+          <div id="search-container" class="input-container">
+            <select name="provider">
+                  <option value="google">Google</option>
+              </select>
+              <input class="homesearch" autofocus="autofocus" placeholder="search..." name="q" type="text"><button
+              type="submit">Search</button>
+            </div>
+          </form>
       </div>
-    </div>
-    <section id="main-section" class="section">
+    <section id="main-section">
       <div v-cloak class="container">
         <div class="columns is-multiline">
           <h2 class="column is-full"><i class="fa fa-search"></i>Info </h2>
           <div class="column is-3">
-            <div class="card">
+            <div class="card clock-card">
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
-                    <figure class="image is-32x32"><i class="fas fa-clock" style="font-size: 26px; color: rgb(48, 134, 233);"></i></figure>
+                    <figure class="image"><i class="fas fa-clock" style="font-size: 24px; color: #99ccff;"></i></figure>
                     </div>
                 <div class="media-content">
-                  <div id ="time" class="title is-size-3 has-text-centered">12:30</div>
+                  <div id ="time" class="title is-size-5 has-text-centered">12:30</div>
                   </div>
                 </div>
                 </div>
               <footer class ="card-footer">
-                <div id ="date-string" class="card-footer-item has-text-grey-light is-size-5">Feb 2</div>
-                
+                <div id ="date-string" class="card-footer-item has-text-grey-light">Feb 2</div>
+                </footer>
+              </div>
+            </div>
+          <div class="column is-3">
+            <div class="card card-weather">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <canvas id="skycon" class="skycon" width="48" height="48"></canvas>
+                    </div>
+                  <div class="media-content">
+                    <div class="title is-size-5 has-text-centered">Currently:&nbsp;&nbsp;<span class="temperature-description">F'ing Cold</span></div>
+                    </div>
+                </div>
+              </div>
+              <footer class ="card-footer">
+                <div class="card-footer-item has-text-grey-light"><div>Temp:  &nbsp; <span class="temperature-degree">32</span><span>&nbsp;F°</span></div>
+                </footer>
             </div>
           </div>
           <div class="column is-3">
-            <div class="card">
+            <div class="card card-ip">
               <div class="card-content">
-                <div id="ip" class="title is-size-3 has-text-centered"></div></div>
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image"><i class="fas fa-globe-americas" style="font-size: 24px; color: #99ccff;"></i></figure>
+                  </div>
+                <div class="media-content">
+                  <div id="ip" class="title is-size-5 has-text-centered"></div>
+                  </div>
+                </div>
+                </div>
                 <footer class ="card-footer">
-                  <div id ="date-string" class="card-footer-item has-text-grey-light is-size-5">Current Public IP</div>
+                  <div class="card-footer-item has-text-grey-light has-text-centered">Current Public IP</div>
+                  </footer>
               </div>
             </div>
         </div>
-        <div v-if="offline" class="offline-message">
+            <div v-if="offline" class="offline-message">
           <i class="far fa-dizzy"></i>
           <h1>You're offline bro. <i class="fas fa-redo-alt" v-on:click="checkOffline()"></i></h1>
         </div>
@@ -111,6 +125,7 @@
       </div>
     </section>
   </div>
+
 
   <script src="vendors/vue.min.js"></script>
   <script src="vendors/js-yaml.min.js"></script>

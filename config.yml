@@ -85,6 +85,22 @@ services:
         subtitle: ""
         url: "https://commafeed.com"
         target: '_blank'
+      - name: "Office 365"
+        logo: "assets/tools/ms.png"
+        subtitle: ""
+        url: "https://portal.office.com"
+        target: '_blank'
+      - name: "AWS"
+        logo: "assets/tools/aws.png"
+        subtitle: ""
+        url: "https://us-west-1.console.aws.amazon.com/console/home?region=us-west-1#"
+        target: '_blank'
+      - name: "Thingiverse"
+        icon: "fas fa-poo"
+        subtitle: ""
+        url: "https://www.thingiverse.com/"
+        target: '_blank'
+        
   - name: "Dev"
     icon: "fas fa-heartbeat"
     items:

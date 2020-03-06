@@ -9,7 +9,6 @@
   <title>Spaceballs, The StartPage!</title>
   <link defer rel="stylesheet" href="vendors/font-awesone.min.css">
   <link defer rel="stylesheet" href="vendors/bulma.min.css">
-  <link rel="stylesheet" type="text/css" href="vendors/flipclock.css">
   <link rel="stylesheet" href="app.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
@@ -30,7 +29,7 @@
       <div v-cloak class="container">
         <div class="columns is-multiline">
           <h2 class="column is-full"><i class="fa fa-search"></i>Info </h2>
-          <div class="column is-3">
+          <div class="column is-4">
             <div class="card clock-card">
               <div class="card-content">
                 <div class="media">
@@ -47,7 +46,7 @@
                 </footer>
               </div>
             </div>
-          <div class="column is-3">
+          <div class="column is-4">
             <div class="card card-weather">
               <div class="card-content">
                 <div class="media">
@@ -64,7 +63,7 @@
                 </footer>
             </div>
           </div>
-          <div class="column is-3">
+          <div class="column is-4">
             <div class="card card-ip">
               <div class="card-content">
                 <div class="media">
@@ -123,9 +122,14 @@
           </div>
         </div>
       </div>
+      <div class="container is-fluid has-text-centered"><h2>Reuter's World News</h2>
+        <div id="divRss" class="rsscontainer">
+          <div class="subtitle is-7"></div>
+      </div>
+      </div>
     </section>
   </div>
-
+        
 
   <script src="vendors/vue.min.js"></script>
   <script src="vendors/js-yaml.min.js"></script>
@@ -133,6 +137,8 @@
   <script src="js/weather.js"></script>
   <script src="js/skycons.js"></script>
   <script src="vendors/jquery.min.js"></script>
+  <script src="vendors/FeedEk.js"></script>
+  <script src="rss.js"></script>
   <script src="js/time.js"></script>
   <script src="js/ip.js"></script>
   <script src="vendors/flipclock.js"></script>

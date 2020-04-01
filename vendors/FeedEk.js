@@ -17,7 +17,7 @@
 		var id = $(this).attr("id"), s = "", dt;
 		$("#" + id).empty();
 		if (def.FeedUrl == undefined) return;
-		$("#" + id).append('<img src="loader.gif" />');
+		$("#" + id).append('<img class="loading" src="loader.gif" />');
 		$.ajax({
 			url: "https://feed.jquery-plugins.net/load?url=" + encodeURIComponent(def.FeedUrl) + "&maxCount=" + def.MaxCount + "&dateCulture=" + def.DateFormatLang + "&dateFormat=" + def.DateFormat,
 			dataType: "json",

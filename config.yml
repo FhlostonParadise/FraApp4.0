@@ -100,6 +100,21 @@ services:
         subtitle: ""
         url: "https://www.thingiverse.com/"
         target: '_blank'
+      - name: "VirtualPBX"
+        icon: "fas fa-phone"
+        subtitle: ""
+        url: "https://dash.virtualpbx.com/"
+        target: '_blank'
+      - name: "Octoprint"
+        icon: "fas fa-print"
+        subtitle: ""
+        url: "https://192.168.10.8"
+        target: '_blank'
+      - name: "Node-RED Reef Monitor"
+        icon: "fas fa-fish"
+        subtitle: ""
+        url: "https://192.168.10.4:1880:ui"
+        target: '_blank'
         
   - name: "Dev"
     icon: "fas fa-heartbeat"

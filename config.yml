@@ -115,6 +115,11 @@ services:
         subtitle: ""
         url: "https://192.168.10.4:1880:ui"
         target: '_blank'
+      - name: "Digital Ocean"
+        icon: "fas fa-rain"
+        subtitle: ""
+        url: "https://cloud.digitalocean.com/projects"
+        target: '_blank'
         
   - name: "Dev"
     icon: "fas fa-heartbeat"

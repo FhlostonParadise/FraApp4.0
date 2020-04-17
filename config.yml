@@ -128,7 +128,7 @@ services:
       - name: "DO -Plesk"
         icon: "fas fa-globe"
         subtitle: ""
-        url: "https://https://167.172.192.241/login_up.php"
+        url: "https://167.172.192.241/login_up.php"
         target: '_blank'
         
   - name: "Dev"

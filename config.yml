@@ -33,7 +33,7 @@ services:
     icon: "fas fa-code-branch"
     items:
       - name: "Apps"
-        icon: "fab fa-jedi"
+        icon: "fas fa-jedi"
         subtitle: ""
         url: "https://apps.the-franklins.us/"
         target: '_blank'
